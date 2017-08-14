@@ -11,6 +11,7 @@ PS please note that i'm not a native English speaker but i try to make my code a
 # Prerequisties:
 1. Java 8 or newer
 2. Google Speech API Key (only if you want speech to text)
+3. FFMpeg (optional without it lib can only use LINEAR16 .wav and x-flac .flac files with SpeechToText Note: if on arm FFmpeg integration is disabled because of some weird behaviour i will try to fix that)
 
 # How to get google speech api key?
 1. Go to https://groups.google.com/a/chromium.org/forum/?fromgroups#!forum/chromium-dev and click join
