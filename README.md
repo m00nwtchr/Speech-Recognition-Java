@@ -20,4 +20,4 @@ PS please note that i'm not a native English speaker but i try to make my code a
 4. You have it you can use it with my library!
 
 # Examples:
-You will find examles in src/examples dir!
+You will find examles in examples dir!
