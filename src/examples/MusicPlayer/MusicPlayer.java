@@ -1,4 +1,4 @@
-package examples;
+package examples.MusicPlayer;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,7 +24,7 @@ import javazoom.jl.player.Player;
  * @author lukas2005
  *
  */
-public class Test {
+public class MusicPlayer {
 
 	// Google Speech APi Key HERE
 	public static String googleSpeechApiKey = "API_KEY_HERE";
@@ -33,11 +33,11 @@ public class Test {
 	public static IQueryProcessor queryp = new ConfigurableQueryProcessor(new File("commands.ini"));
 	//Instance of TextToSpeech converter
 	public static TextToSpeech tts = new TextToSpeech("pl-pl");
-	//Insrance of SpeechToText converter
+	//Instance of SpeechToText converter
 	public static SpeechToText stt = new SpeechToText("pl-pl", googleSpeechApiKey);
 	
 	public static void main(String[] args) {
-		//Event listener to add song name at the end of respone and play music
+		//Event listener to add song name at the end of response and play music
 		new EventListener("PLAY_MUSIC", true, true) {
 			
 			@Override
