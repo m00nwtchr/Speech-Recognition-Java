@@ -1,7 +1,7 @@
 # About
 Java library for: speech recognition, query processing and speech to text in 116 lines!
 
-Yep you heard it right 116 lines is the simplest implementation of this library with:
+Yep you heard it right 116 (without comments) lines is the simplest implementation of this library with:
 1. Speech to text
 2. Text recognition / query processing and matching
 2. Text to speech to respond to users!
