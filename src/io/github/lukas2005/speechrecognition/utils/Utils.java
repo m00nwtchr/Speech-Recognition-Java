@@ -3,6 +3,7 @@ package io.github.lukas2005.speechrecognition.utils;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sound.sampled.AudioInputStream;
@@ -47,6 +48,23 @@ public class Utils {
 	 */
 	public static boolean isOnARM() {
 		return System.getProperty("os.arch").contains("arm") ? true : false;
+	}
+	
+	public static boolean needReEncode(File file) {
+		boolean isFlac = file.getName().endsWith(".flac");
+		boolean isWav = file.getName().endsWith(".wav");
+		return !isFlac && !isWav;
+	}
+	
+	public static List<String> splitEqually(String text, int size) {
+	    // Give the list the right capacity to start with. You could use an array
+	    // instead if you wanted.
+	    List<String> ret = new ArrayList<String>((text.length() + size - 1) / size);
+
+	    for (int start = 0; start < text.length(); start += size) {
+	        ret.add(text.substring(start, Math.min(text.length(), start + size)));
+	    }
+	    return ret;
 	}
 	
 }

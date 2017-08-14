@@ -9,10 +9,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.charset.Charset;
@@ -60,7 +62,7 @@ public class NetworkUtils {
 		
 		if (!fileIn.exists()) throw new FileNotFoundException(fileIn.getPath());
 		
-		if (!fileIn.getName().endsWith(".wav") || !fileIn.getName().endsWith(".flac") && !Utils.isOnARM()) {
+		if (Utils.needReEncode(fileIn) && !Utils.isOnARM()) {
 			File tempTarget = File.createTempFile("speech", ".flac");
 			String cmd="ffmpeg -y -i \""+fileIn.getAbsolutePath()+"\" \""+tempTarget.getAbsolutePath()+"\"";
 			Process pr = Runtime.getRuntime().exec(cmd);
@@ -176,11 +178,12 @@ public class NetworkUtils {
 		 * 
 		 * @return Completed url
 		 * @throws MalformedURLException
+		 * @throws UnsupportedEncodingException 
 		 */
-		public URL buildUrl() throws MalformedURLException {
+		public URL buildUrl() throws MalformedURLException, UnsupportedEncodingException {
 			String urlString = urlBase+'?';
 			for (String key : args.keySet()) {
-				urlString += key +'='+ args.get(key)+'&';
+				urlString += key +'='+ URLEncoder.encode(args.get(key), "UTF-8")+'&';
 			}
 			
 			if (urlString.endsWith("&")) urlString = urlString.substring(0, urlString.length()-1);
