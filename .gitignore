@@ -22,10 +22,7 @@
 hs_err_pid*
 
 #Custom ignores
-src/Test.java
 dist
-libdist
-/commands.ini
 
 #Audio files
 *.mp3
