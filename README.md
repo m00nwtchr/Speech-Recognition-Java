@@ -6,6 +6,8 @@ Yep you heard it right 116 lines is the simplest implementation of this library 
 2. Text recognition / query processing and matching
 2. Text to speech to respond to users!
 
+PS please note that i'm not a native English speaker but i try to make my code as much English-people-friendly as i can
+
 # Prerequisties:
 1. Java 8 or newer
 2. Google Speech API Key (only if you want speech to text)
