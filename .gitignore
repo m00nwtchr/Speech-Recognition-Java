@@ -25,4 +25,8 @@ hs_err_pid*
 src/Test.java
 dist
 commands.ini
-Life.mp3 #Song used for testing
+
+#Audio files
+*.mp3
+*.wav
+*.flac
