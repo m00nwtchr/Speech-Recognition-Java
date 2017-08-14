@@ -19,5 +19,5 @@ PS please note that i'm not a native English speaker but i try to make my code a
 3. Then go to credentials on the left side of the screen now click create credentials and then api key then click close and copy your api key
 4. You have it you can use it with my library!
 
-#Examples:
+# Examples:
 You will find examles in src/examples dir!
