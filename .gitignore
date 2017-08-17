@@ -23,6 +23,7 @@ hs_err_pid*
 
 #Custom ignores
 dist
+run
 
 #Audio files
 *.mp3
