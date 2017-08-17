@@ -27,7 +27,7 @@ import javazoom.jl.player.Player;
 public class MusicPlayer {
 
 	// Google Speech APi Key HERE
-	public static String googleSpeechApiKey = "API_KEY_HERE";
+	public static String googleSpeechApiKey = "API-KEY";
 	
 	//Instance of query processor
 	public static IQueryProcessor queryp = new ConfigurableQueryProcessor(new File("commands.ini"));
