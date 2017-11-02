@@ -29,12 +29,15 @@ public class MusicPlayer {
 	// Google Speech APi Key HERE
 	public static String googleSpeechApiKey = "API-KEY";
 	
+	// Language the app will understand and speak in
+	public static String lang = "pl-pl";
+	
 	//Instance of query processor
 	public static IQueryProcessor queryp = new ConfigurableQueryProcessor(new File("commands.ini"));
 	//Instance of TextToSpeech converter
-	public static TextToSpeech tts = new TextToSpeech("pl-pl");
+	public static TextToSpeech tts = new TextToSpeech(lang);
 	//Instance of SpeechToText converter
-	public static SpeechToText stt = new SpeechToText("pl-pl", googleSpeechApiKey);
+	public static SpeechToText stt = new SpeechToText(lang, googleSpeechApiKey);
 	
 	public static void main(String[] args) {
 		//Event listener to add song name at the end of response and play music
